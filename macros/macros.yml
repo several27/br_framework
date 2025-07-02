@@ -10,7 +10,7 @@ macros:
     type: "value"
     description: "{\"ProphecyType\": \"value\"}"
   macroType: "query"
-- name: "snowflake_unpivot"
+- name: "SnowflakeUnpivot"
   arguments:
   - name: "relation"
     type: "value"

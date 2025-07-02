@@ -1,0 +1,76 @@
+{
+  "SnowflakeUnpivot" : {
+    "name" : "SnowflakeUnpivot",
+    "macroType" : "query",
+    "definition" : "\n  {% set cols_query %}\n    select column_name\n    from {{ relation.database }}.information_schema.columns\n    where table_schema = '{{ relation.schema.upper() }}'\n      and table_name   = '{{ relation.identifier.upper() }}'\n  {% endset %}\n\n  {% set results = run_query(cols_query) %}\n  {% if execute %}\n    {% set columns = results.columns[0].values() %}\n  {% else %}\n    {% set columns = [] %}\n  {% endif %}\n  {% set unpivot_columns = [] %}\n  {% for col in columns %}\n    {% if col.upper() not in exclude and col.upper() not in remove %}\n      {% do unpivot_columns.append(col.upper()) %}\n    {% endif %}\n  {% endfor %}\n\n  {# ──────────────────────────────────────────────────────────────\n     3. Select + optional filter (sub-query) ➜ UNPIVOT\n     ─────────────────────────────────────────────────────────── #}\n  select *\n  from (\n      select *\n      from {{ relation }}\n      {% if where_condition %}\n        where {{ where_condition }}\n      {% endif %}\n  ) src\n  unpivot (\n      {{ value_name }} for {{ field_name }}\n      in ({{ unpivot_columns | join(', ') }})\n  )",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "relation",
+        "kind" : {
+          "type" : "value",
+          "value" : " ref('test_data')"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "field_name",
+        "kind" : {
+          "type" : "value",
+          "value" : "'key'"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "value_name",
+        "kind" : {
+          "type" : "value",
+          "value" : "'value'"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "cast_to",
+        "kind" : {
+          "type" : "value",
+          "value" : "'string'"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "exclude",
+        "kind" : {
+          "type" : "value",
+          "value" : "['ID']"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "remove",
+        "kind" : {
+          "type" : "value",
+          "value" : "[]"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      }, {
+        "name" : "where_condition",
+        "kind" : {
+          "type" : "value",
+          "value" : "None"
+        },
+        "optional" : true,
+        "isWorkflowNodeConfiguration" : false,
+        "isReferenced" : false
+      } ]
+    },
+    "staleState" : "none",
+    "version" : 0
+  }
+}

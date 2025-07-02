@@ -939,10 +939,6 @@
       "https://github.com/prophecy-io/snowflake-sql-basics" : "45118"
     }
   },
-  "entitiesToSync" : [ {
-    "name" : "snowflake_unpivot_test",
-    "type" : "Model",
-    "syncedOnce" : false
-  } ],
+  "entitiesToSync" : [ ],
   "frontEndLanguage" : "sql"
 }

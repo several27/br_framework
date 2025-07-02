@@ -44,6 +44,7 @@ sqlModels:
     files:
     - models/snowflake_unpivot_test.sql
     - .prophecy/ide/models/snowflake_unpivot_test.json
+    - models/schema.yml
     sqlDependencies:
       models: []
       datasets: []
@@ -54,6 +55,17 @@ sqlModels:
 sqlSnapshots: {}
 sqlTests: {}
 sqlMacros:
+  .prophecy/metadata/sqlmacros/SnowflakeUnpivot:
+    name: SnowflakeUnpivot
+    macroType: query
+    description: null
+    author: maciej@prophecy.io
+    files:
+    - macros/SnowflakeUnpivot.sql
+    - .prophecy/ide/macros/SnowflakeUnpivot.json
+    - macros/macros.yml
+    - gems/SnowflakeUnpivot.py
+    createdAt: '2025-07-02 14:50:38'
   .prophecy/metadata/sqlmacros/set_query_tag_for_dataset:
     name: set_query_tag_for_dataset
     macroType: query
@@ -63,17 +75,6 @@ sqlMacros:
     - macros/generate_schema_name.sql
     - macros/macros.yml
     createdAt: '2025-07-02 02:03:06'
-  .prophecy/metadata/sqlmacros/snowflake_unpivot:
-    name: snowflake_unpivot
-    macroType: query
-    description: null
-    author: maciej@prophecy.io
-    files:
-    - macros/snowflake_unpivot.sql
-    - .prophecy/ide/macros/snowflake_unpivot.json
-    - macros/macros.yml
-    - gems/snowflake_unpivot.py
-    createdAt: '2025-07-02 05:17:37'
 sqlSeeds:
   .prophecy/metadata/sqlseeds/for_unpivot:
     name: for_unpivot

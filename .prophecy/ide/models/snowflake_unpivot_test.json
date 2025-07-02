@@ -15,8 +15,8 @@
       "component" : "TargetModel",
       "metadata" : {
         "label" : "snowflake_unpivot_test",
-        "x" : 200,
-        "y" : 40,
+        "x" : -80,
+        "y" : 100,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -24,7 +24,7 @@
         "customQueryDisabled" : true,
         "customQuery" : false,
         "incrementalEditorDisabled" : true,
-        "query" : "SELECT * \n\nFROM Macro_1\n",
+        "query" : "SELECT * \n\nFROM SnowflakeUnpivot_1\n",
         "isModel" : true,
         "incrementalKey" : false,
         "incremental" : {
@@ -34,7 +34,7 @@
       "ports" : {
         "inputs" : [ {
           "id" : "T5wDsKPv",
-          "slug" : "Macro_1"
+          "slug" : "SnowflakeUnpivot_1"
         } ],
         "outputs" : [ {
           "id" : "k9xofVW0",
@@ -44,41 +44,85 @@
         "autoUpdateOnRun" : false
       }
     },
-    "wqAeaoCfKdiU6wSssxY5h$$lfO7dKzMwEXAZnJuRA05R" : {
-      "id" : "wqAeaoCfKdiU6wSssxY5h$$lfO7dKzMwEXAZnJuRA05R",
-      "component" : "Macro",
+    "hjvgsnT7zjJsSkTQyYJtC" : {
+      "id" : "hjvgsnT7zjJsSkTQyYJtC",
+      "component" : "Seed",
       "metadata" : {
-        "label" : "Macro_1",
-        "slug" : "Macro_1",
-        "x" : -140,
-        "y" : 40,
-        "phase" : 0,
-        "macroDependencies" : [ "br_framework.snowflake_unpivot" ]
+        "label" : "for_unpivot",
+        "slug" : "for_unpivot",
+        "x" : -580,
+        "y" : 100,
+        "phase" : 0
       },
       "properties" : {
-        "macroName" : "snowflake_unpivot",
-        "parameters" : [ {
-          "name" : "relation",
-          "value" : "ref('for_unpivot')"
-        }, {
-          "name" : "field_name"
-        }, {
-          "name" : "value_name"
-        }, {
-          "name" : "cast_to"
-        }, {
-          "name" : "exclude"
-        }, {
-          "name" : "remove"
-        }, {
-          "name" : "where_condition"
-        } ],
-        "projectName" : "br_framework"
+        "table" : {
+          "name" : "for_unpivot",
+          "sourceType" : "Seed",
+          "alias" : ""
+        }
       },
       "ports" : {
         "inputs" : [ ],
         "outputs" : [ {
-          "id" : "kWAV7ZsDbt9-OMQGFPbRG$$OSOwf8q167VtljVcUXAjd",
+          "id" : "uVri9u0pH9VebuuC6uArv",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "vHk4F9PGnGlUbS9YyYyYS$$B7RFxlN67fB1NklYA1PCt" : {
+      "id" : "vHk4F9PGnGlUbS9YyYyYS$$B7RFxlN67fB1NklYA1PCt",
+      "component" : "SnowflakeUnpivot",
+      "metadata" : {
+        "label" : "SnowflakeUnpivot_1",
+        "slug" : "SnowflakeUnpivot_1",
+        "x" : -340,
+        "y" : 100,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "relation_name" : [ "for_unpivot" ],
+        "cast_to" : "string",
+        "remove" : [ ],
+        "exclude" : [ "id" ],
+        "value_name" : "value",
+        "field_name" : "key",
+        "where_condition" : ""
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "0xbNzkRTdDda_Iq-a4o25$$goG0kuY1Fmn775mfsns3t",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CA",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "NY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "WA",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "8pHt6Y73BTPhv4V3ySaqL$$gjBxAdNuGy_wlf3UWtG60",
           "schema" : {
             "entityType" : "",
             "providerType" : "Snowflake",
@@ -103,13 +147,25 @@
         } ],
         "isCustomOutputSchema" : true,
         "autoUpdateOnRun" : true
+      },
+      "componentInfo" : {
+        "gemId" : "SnowflakeUnpivot_br_framework",
+        "name" : "SnowflakeUnpivot",
+        "projectName" : "br_framework",
+        "sourceProjectName" : "br_framework"
       }
     }
   },
   "connections" : [ {
-    "id" : "TMMpLn4Q4PjzPq48Thfji$$gw-dmPirrWCK_VRP1rfSd",
-    "source" : "wqAeaoCfKdiU6wSssxY5h$$lfO7dKzMwEXAZnJuRA05R",
-    "sourcePort" : "kWAV7ZsDbt9-OMQGFPbRG$$OSOwf8q167VtljVcUXAjd",
+    "id" : "guHI5tOWHNQtIyeFOx0rV$$yhBN4l0YhglC17yB0v2Av",
+    "source" : "hjvgsnT7zjJsSkTQyYJtC",
+    "sourcePort" : "uVri9u0pH9VebuuC6uArv",
+    "target" : "vHk4F9PGnGlUbS9YyYyYS$$B7RFxlN67fB1NklYA1PCt",
+    "targetPort" : "0xbNzkRTdDda_Iq-a4o25$$goG0kuY1Fmn775mfsns3t"
+  }, {
+    "id" : "tg_s35lOW95Okc4PTqHzE",
+    "source" : "vHk4F9PGnGlUbS9YyYyYS$$B7RFxlN67fB1NklYA1PCt",
+    "sourcePort" : "8pHt6Y73BTPhv4V3ySaqL$$gjBxAdNuGy_wlf3UWtG60",
     "target" : "snowflake_unpivot_test##jWp8V0Xc",
     "targetPort" : "T5wDsKPv"
   } ],

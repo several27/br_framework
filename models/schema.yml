@@ -1,0 +1,15 @@
+---
+version: 2
+models:
+- name: "snowflake_unpivot_test"
+  columns:
+  - name: "ID"
+    dataType:
+      type: "Number"
+  - name: "KEY"
+    dataType:
+      type: "String"
+  - name: "VALUE"
+    dataType:
+      type: "String"
+  tests: []

@@ -1,9 +1,17 @@
-WITH Macro_1 AS (
+WITH for_unpivot AS (
 
-  {{ br_framework.snowflake_unpivot(relation =  ref('for_unpivot')) }}
+  SELECT * 
+  
+  FROM {{ ref('for_unpivot')}}
+
+),
+
+SnowflakeUnpivot_1 AS (
+
+  {{ br_framework.SnowflakeUnpivot( ref('for_unpivot'), 'key', 'value', 'string', ['ID'], [], "") }}
 
 )
 
 SELECT *
 
-FROM Macro_1
+FROM SnowflakeUnpivot_1
