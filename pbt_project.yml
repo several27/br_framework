@@ -73,7 +73,7 @@ sqlMacros:
     - .prophecy/ide/macros/snowflake_unpivot.json
     - macros/macros.yml
     - gems/snowflake_unpivot.py
-    createdAt: '2025-07-02 02:13:19'
+    createdAt: '2025-07-02 05:17:37'
 sqlSeeds:
   .prophecy/metadata/sqlseeds/for_unpivot:
     name: for_unpivot

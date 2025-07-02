@@ -59,7 +59,7 @@
         "macroName" : "snowflake_unpivot",
         "parameters" : [ {
           "name" : "relation",
-          "value" : "'maciej.public.for_unpivot'"
+          "value" : "ref('for_unpivot')"
         }, {
           "name" : "field_name"
         }, {

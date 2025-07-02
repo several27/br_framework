@@ -2,7 +2,7 @@
   "snowflake_unpivot" : {
     "name" : "snowflake_unpivot",
     "macroType" : "query",
-    "definition" : "\n  {{\n    log(\"Running snowflake_unpivot for: \" ~ relation, info=True)\n  }}\n\n  select *\n  from maciej.public.for_unpivot\n  {{ \"where \" ~ where_condition if where_condition }}\n  unpivot (\n    {{ value_name }} for {{ field_name }}\n    in ({{ unpivot_columns | join(', ') }})\n  )",
+    "definition" : "\n  \n  {{ log(\"relation: \" ~ relation, info=True) }}\n  {{ log(\"relation.db: \" ~ relation.database, info=True) }}\n  {{ log(\"relation.sc: \" ~ relation.schema, info=True) }}\n  {{ log(\"relation.id: \" ~ relation.identifier, info=True) }}\n\n  {% set cols_query %}\n    select column_name\n    from {{ relation.database }}.information_schema.columns\n    where table_schema = '{{ relation.schema.upper() }}'\n      and table_name = '{{ relation.identifier.upper() }}'\n  {% endset %}\n  {% set results = run_query(cols_query) %}\n  \n  {% if execute %} \n    {% set columns = results.columns[0].values() %}\n  {% else %}\n    {% set columns = [] %}\n  {% endif %}\n  \n  {% set unpivot_columns = [] %}\n\n  {% for col in columns %}\n    {% if col not in exclude and col not in remove %}\n      {% do unpivot_columns.append(col) %}\n    {% endif %}\n  {% endfor %}\n\n  select *\n  from {{ relation }}\n  {{ \"where \" ~ where_condition if where_condition }}\n  unpivot (\n    {{ value_name }} for {{ field_name }}\n    in ({{ unpivot_columns | join(', ') }})\n  )",
     "parameters" : {
       "type" : "record",
       "fields" : [ {
@@ -11,16 +11,6 @@
           "type" : "value"
         },
         "optional" : false,
-        "comment" : "",
-        "isWorkflowNodeConfiguration" : false,
-        "isReferenced" : false
-      }, {
-        "name" : "unpivot_columns",
-        "kind" : {
-          "type" : "value",
-          "value" : "['CA', 'NY', 'WA']"
-        },
-        "optional" : true,
         "comment" : "",
         "isWorkflowNodeConfiguration" : false,
         "isReferenced" : false
@@ -58,7 +48,7 @@
         "name" : "exclude",
         "kind" : {
           "type" : "value",
-          "value" : "['id']"
+          "value" : "['ID']"
         },
         "optional" : true,
         "comment" : "",
@@ -89,7 +79,7 @@
     "staleState" : "none",
     "propertiesFile" : {
       "name" : "macros",
-      "content" : "---\nversion: 2\nmacros:\n- name: \"set_query_tag_for_dataset\"\n  arguments: []\n  macroType: \"query\"\n- name: \"unpivot\"\n  arguments:\n  - name: \"parameter1\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"snowflake_unpivot\"\n  arguments:\n  - name: \"relation\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"unpivot_columns\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"field_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"value_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"cast_to\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"exclude\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"remove\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"where_condition\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
+      "content" : "---\nversion: 2\nmacros:\n- name: \"set_query_tag_for_dataset\"\n  arguments: []\n  macroType: \"query\"\n- name: \"unpivot\"\n  arguments:\n  - name: \"parameter1\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"snowflake_unpivot\"\n  arguments:\n  - name: \"relation\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"field_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"value_name\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"cast_to\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"exclude\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"remove\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"where_condition\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
       "path" : "br_framework/macros/macros.yml",
       "projectConfiguration" : null,
       "folderConfiguration" : {
@@ -110,10 +100,6 @@
           "name" : "snowflake_unpivot",
           "arguments" : [ {
             "name" : "relation",
-            "type" : "value",
-            "description" : "{\"ProphecyType\": \"value\"}"
-          }, {
-            "name" : "unpivot_columns",
             "type" : "value",
             "description" : "{\"ProphecyType\": \"value\"}"
           }, {
