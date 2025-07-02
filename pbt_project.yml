@@ -1,0 +1,121 @@
+name: br_framework
+description: ''
+version: 0.0.1
+author: maciej@prophecy.io
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+gemContainer:
+  languageVersion: ''
+  gemLibsVersion: ''
+  gems: {}
+  dependencies: null
+functions:
+  author: null
+  createdAt: '2025-07-02 02:02:37'
+  udfs: {}
+  udafs: {}
+  expressions: {}
+  airflowFunctions: {}
+  businessRules: {}
+subgraphs: {}
+sqlModels:
+  .prophecy/metadata/sqlmodels/snowflake_unpivot_test:
+    name: snowflake_unpivot_test
+    schema:
+      entityType: ''
+      providerType: Snowflake
+      fields:
+      - name: ID
+        dataType:
+          type: Number
+      - name: KEY
+        dataType:
+          type: String
+      - name: VALUE
+        dataType:
+          type: String
+    description: null
+    author: maciej@prophecy.io
+    files:
+    - models/snowflake_unpivot_test.sql
+    - .prophecy/ide/models/snowflake_unpivot_test.json
+    sqlDependencies:
+      models: []
+      datasets: []
+      seeds: []
+      sources: []
+      snapshots: []
+    createdAt: '2025-07-02 02:13:28'
+sqlSnapshots: {}
+sqlTests: {}
+sqlMacros:
+  .prophecy/metadata/sqlmacros/set_query_tag_for_dataset:
+    name: set_query_tag_for_dataset
+    macroType: query
+    description: null
+    author: maciej@prophecy.io
+    files:
+    - macros/generate_schema_name.sql
+    - macros/macros.yml
+    createdAt: '2025-07-02 02:03:06'
+  .prophecy/metadata/sqlmacros/snowflake_unpivot:
+    name: snowflake_unpivot
+    macroType: query
+    description: null
+    author: maciej@prophecy.io
+    files:
+    - macros/snowflake_unpivot.sql
+    - .prophecy/ide/macros/snowflake_unpivot.json
+    - macros/macros.yml
+    - gems/snowflake_unpivot.py
+    createdAt: '2025-07-02 02:13:19'
+sqlSeeds:
+  .prophecy/metadata/sqlseeds/for_unpivot:
+    name: for_unpivot
+    schema:
+      entityType: ''
+      providerType: Snowflake
+      fields:
+      - name: id
+        dataType:
+          type: Number
+      - name: CA
+        dataType:
+          type: String
+      - name: NY
+        dataType:
+          type: String
+      - name: WA
+        dataType:
+          type: String
+    description: null
+    author: maciej@prophecy.io
+    files:
+    - seeds/for_unpivot.csv
+    - seeds/seeds.yml
+    createdAt: '2025-07-02 02:14:42'
+sqlSources: {}
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: maciej@prophecy.io
+  createdAt: '2025-07-02 02:02:37'
+dependencies: []
+projectDependencies:
+  '45118':
+    projectUID: 45118
+    projectName: ProphecySnowflakeSqlBasics
+    repositoryPath: gitUri=https://github.com/prophecy-io/snowflake-sql-basics&subPath=
+    version: 0.0.5
+    isDefault: true
+    author: null
+    createdAt: '2025-07-02 02:02:11'
+flags:
+  shouldAddDefaultDependenciesIfAbsent: false
+pipelineConfigurations: {}

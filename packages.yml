@@ -1,0 +1,5 @@
+---
+packages:
+- revision: "0.0.5"
+  git: "https://github.com/prophecy-io/snowflake-sql-basics"
+  subdirectory: ""

@@ -1,0 +1,948 @@
+{
+  "name" : "br_framework",
+  "fileSystem" : {
+    "type" : "Folder",
+    "name" : "",
+    "children" : { },
+    "path" : "",
+    "editable" : true
+  },
+  "providerType" : "snowflake",
+  "prophecyIDEFolder" : {
+    "name" : "",
+    "children" : { },
+    "path" : "",
+    "editable" : true
+  },
+  "externalSources" : {
+    "type" : "Project",
+    "name" : "",
+    "children" : [ {
+      "type" : "Database",
+      "name" : "ADITYA",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "AI",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "ANYA",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "ASHISH",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "BLACKROCK",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "BOBW",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "BUG_REPRO",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "CHETAN",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "CHIRAG",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "DANYELLE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "DOCS_ANALYTICS",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "DOCS_RAW",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "EX1_GOR_X",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "EX1_GOR_Y",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "FINANCIAL__ECONOMIC_ESSENTIALS",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "HAYDEN",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "INTERNATIONAL_SOCCER_RESULTS",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "ITAI",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "JAFFLE_SHOP",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "JAFFLE_SHOP_VLAUNIR",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "JASVINDER",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "JSR",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "KEERTHI",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "KENPEI",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "KHAGESH",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "KISHORE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "LALITH",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "LOUIS",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "MACIEJ",
+      "children" : [ {
+        "type" : "Schema",
+        "name" : "GO_PLAYGROUND",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "INFORMATION_SCHEMA",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "LOCAL_DBT",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "LOCAL_DBT_SCHEMA_TEST",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "LOCAL_DBT_UKSCHEMA_TEST",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "PUBLIC",
+        "tables" : {
+          "RAW_ORDERS" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "USER_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "STATUS",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "RAW_CLIENTS" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "FIRST_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "LAST_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EMAIL",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "MY_SECOND_DBT_MODEL" : {
+            "entityType" : "VIEW",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "REDDIT_VARIANT" : {
+            "entityType" : "VIEW",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "REDDIT_VARIANT",
+              "dataType" : {
+                "type" : "Variant"
+              }
+            } ]
+          },
+          "CUSTOMERS" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "CUSTOMER_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "FIRST_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "LAST_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "FIRST_ORDER",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "MOST_RECENT_ORDER",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "NUMBER_OF_ORDERS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "EMAIL",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_LIFETIME_VALUE",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "STG_CUSTOMERS" : {
+            "entityType" : "VIEW",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "CUSTOMER_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "FIRST_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "LAST_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "EMAIL",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "1_test" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "USER_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "STATUS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "VARIOUS_CAPS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "various_CAPs",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "MY_FIRST_DBT_MODEL" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "STG_ORDERS" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ORDER_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "STATUS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "NEW_COL",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "POP_SEEDS" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "USER_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "UPDATED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "STATUS",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "CUSTOMERS_ORDERS" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "CUSTOMER_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "FIRST_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "LAST_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "TOTAL_ORDER_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "MOST_RECENT_ORDER",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "NUMBER_OF_ORDERS",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "CUSTOMERS_BROKEN_VARIANT" : {
+            "entityType" : "VIEW",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "CUSTOMER_DATA",
+              "dataType" : {
+                "type" : "Variant"
+              }
+            }, {
+              "name" : "CHECKK",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CUSTOMER_DATA_TO_FAIL",
+              "dataType" : {
+                "type" : "Variant"
+              }
+            } ]
+          },
+          "RAW_CUSTOMERS" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "FIRST_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "LAST_NAME",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "ORDERS" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ORDER_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CUSTOMER_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "STATUS",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "CREDIT_CARD_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "COUPON_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "BANK_TRANSFER_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "GIFT_CARD_AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "CUSTOMERS_VARIANT" : {
+            "entityType" : "VIEW",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "CUSTOMER_DATA",
+              "dataType" : {
+                "type" : "Variant"
+              }
+            }, {
+              "name" : "ADDRESS",
+              "dataType" : {
+                "type" : "Variant"
+              }
+            }, {
+              "name" : " address_string",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "REDDIT_JSON" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "REDDIT_JSON",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "REDDIT_JSON_2" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "REDDIT_JSON",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "FOR_UNPIVOT" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "CA",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "NY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "WA",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "REDDIT_JSON_3" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "REDDIT_JSON",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "CUSTOMERS_JSON_BROKEN" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "CUSTOMER_DATA",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "CUSTOMERS_JSON" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "CUSTOMER_DATA",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "RAW_PAYMENTS" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PAYMENT_METHOD",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          },
+          "SCD2_DATA" : {
+            "entityType" : "TABLE",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "USER_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "UPDATED_DATE",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "STATUS",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "STG_PAYMENTS" : {
+            "entityType" : "VIEW",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "PAYMENT_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "ORDER_ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "PAYMENT_METHOD",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "AMOUNT",
+              "dataType" : {
+                "type" : "Number"
+              }
+            } ]
+          }
+        }
+      }, {
+        "type" : "Schema",
+        "name" : "PUBLIC_TEST",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "QWE",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "SCD2S",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "SNAPSHOTS",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "VARIANT_PLAYGROUND",
+        "children" : [ ]
+      }, {
+        "type" : "Schema",
+        "name" : "ZENDESK",
+        "children" : [ ]
+      } ]
+    }, {
+      "type" : "Database",
+      "name" : "MATTHEW_DEMO",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "MEITEST",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "MICHELIN_POC",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "MIKE_T",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "MY_TEST_DB",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "NTONG",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "ONBE_DEMO_DEV",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "ONBE_DEMO_PROD",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "POOJA",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "PPIYUSH_TEST",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "PRAKHAR_DB",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "QA_COPILOT",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "QA_DATABASE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "QA_TEST",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "QA_UPLOAD_TABLES",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "RAJ",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "RAJAT",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "RAKSHAK",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "RJ",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "RJ_DEV",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "RJ_PROD",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "ROHIT",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SHASHANK",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SIEMENS_POC",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SNOWFLAKE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SNOWFLAKE_SAMPLE_DATA",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SONY",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SOURCES_DB",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SREERAM",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SYNTHETIC_DATA",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SYNTHETIC_DATA_DIRTY",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SYNTHETIC_DATA_EDUCATION",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SYNTHETIC_DATA_FINANCE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SYNTHETIC_DATA_HEALTHCARE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SYNTHETIC_DATA_MANUFACTURING",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SYNTHETIC_DATA_MEDIUM_DIRTY",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SYNTHETIC_DATA_RETAIL",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "SYNTHETIC_DATA_TECHNOLOGY",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "TANMAY",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "TEST",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "TESTING",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "TEST_TABLE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "TOYOTA",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "UT_DB_DONOT_USE",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "VLAUNIR_DB",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "WESTPAC",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "WIBRFKW",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "jaffle_shop",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "qa_database",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "qa_database_lower_case_only",
+      "children" : [ ]
+    }, {
+      "type" : "Database",
+      "name" : "tESt",
+      "children" : [ ]
+    } ]
+  },
+  "dependenciesContainer" : {
+    "dependencies" : { },
+    "prophecyProjectDependencies" : {
+      "https://github.com/prophecy-io/snowflake-sql-basics" : "45118"
+    }
+  },
+  "entitiesToSync" : [ {
+    "name" : "snowflake_unpivot_test",
+    "type" : "Model",
+    "syncedOnce" : false
+  } ],
+  "frontEndLanguage" : "sql"
+}

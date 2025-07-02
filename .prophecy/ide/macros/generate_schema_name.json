@@ -1,0 +1,13 @@
+{
+  "set_query_tag_for_dataset" : {
+    "name" : "set_query_tag_for_dataset",
+    "macroType" : "query",
+    "definition" : "\n    \n    {{ log(\"Setting query_tag to PROPHECY_TAG\") }}\n    {% do run_query(\"alter session set query_tag = PROPHECY_TAG\") %}",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ ]
+    },
+    "staleState" : "none",
+    "version" : 0
+  }
+}

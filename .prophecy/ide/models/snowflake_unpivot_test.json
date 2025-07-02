@@ -1,0 +1,117 @@
+{
+  "id" : "snowflake_unpivot_test",
+  "metainfo" : {
+    "label" : "snowflake_unpivot_test",
+    "autoLayout" : false,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "version" : 3
+  },
+  "processes" : {
+    "snowflake_unpivot_test##jWp8V0Xc" : {
+      "id" : "snowflake_unpivot_test##jWp8V0Xc",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "snowflake_unpivot_test",
+        "x" : 200,
+        "y" : 40,
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM Macro_1\n",
+        "isModel" : true,
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "T5wDsKPv",
+          "slug" : "Macro_1"
+        } ],
+        "outputs" : [ {
+          "id" : "k9xofVW0",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      }
+    },
+    "wqAeaoCfKdiU6wSssxY5h$$lfO7dKzMwEXAZnJuRA05R" : {
+      "id" : "wqAeaoCfKdiU6wSssxY5h$$lfO7dKzMwEXAZnJuRA05R",
+      "component" : "Macro",
+      "metadata" : {
+        "label" : "Macro_1",
+        "slug" : "Macro_1",
+        "x" : -140,
+        "y" : 40,
+        "phase" : 0,
+        "macroDependencies" : [ "br_framework.snowflake_unpivot" ]
+      },
+      "properties" : {
+        "macroName" : "snowflake_unpivot",
+        "parameters" : [ {
+          "name" : "relation",
+          "value" : "'maciej.public.for_unpivot'"
+        }, {
+          "name" : "field_name"
+        }, {
+          "name" : "value_name"
+        }, {
+          "name" : "cast_to"
+        }, {
+          "name" : "exclude"
+        }, {
+          "name" : "remove"
+        }, {
+          "name" : "where_condition"
+        } ],
+        "projectName" : "br_framework"
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "kWAV7ZsDbt9-OMQGFPbRG$$OSOwf8q167VtljVcUXAjd",
+          "schema" : {
+            "entityType" : "",
+            "providerType" : "Snowflake",
+            "fields" : [ {
+              "name" : "ID",
+              "dataType" : {
+                "type" : "Number"
+              }
+            }, {
+              "name" : "KEY",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "VALUE",
+              "dataType" : {
+                "type" : "String"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : true,
+        "autoUpdateOnRun" : true
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "TMMpLn4Q4PjzPq48Thfji$$gw-dmPirrWCK_VRP1rfSd",
+    "source" : "wqAeaoCfKdiU6wSssxY5h$$lfO7dKzMwEXAZnJuRA05R",
+    "sourcePort" : "kWAV7ZsDbt9-OMQGFPbRG$$OSOwf8q167VtljVcUXAjd",
+    "target" : "snowflake_unpivot_test##jWp8V0Xc",
+    "targetPort" : "T5wDsKPv"
+  } ],
+  "component" : "Model"
+}
